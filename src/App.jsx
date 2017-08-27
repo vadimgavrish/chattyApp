@@ -10,7 +10,8 @@ class App extends Component {
     super(props);
     this.state = {
       currentUser: {name: 'Anonymous'},
-      messages: []
+      messages: [],
+      users: 0
     }
     this.socket = new WebSocket('ws://localhost:3001');
   }  
@@ -34,6 +35,13 @@ class App extends Component {
             messages: nameChange
           });
           break;
+        case 'userCount':
+          this.setState({
+            users: message.users
+          });
+          break;
+        default:
+          throw new Error("Unknown event type " + data.type);
       }
     }
   }
@@ -68,7 +76,7 @@ class App extends Component {
   render() {
     return (
       <div>
-        <NavBar />
+        <NavBar userCount={this.state.users} />
         <MessageList messages={this.state.messages} />
         <ChatBar handleSubmit={this.handleSubmit.bind(this)} currentUser={this.state.currentUser.name} handleNameChange={this.handleNameChange.bind(this)} />
       </div>

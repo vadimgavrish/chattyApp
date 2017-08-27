@@ -10,8 +10,7 @@ body {
 }
 
 .chatbar {
-  background: tomato;
-  border-top: 1px solid black;
+  background: dodgerblue;
   bottom: 0;
   display: flex;
   left: 0;
@@ -22,12 +21,21 @@ body {
 
 .chatbar-message,
 .chatbar-username {
-  border: 1px solid black;
+  background: dodgerblue;
+  color: white;
+  border: 0;
+  font-size: 15px;
+  border-bottom: 5px solid white;
   display: block;
   height: 40px;
   line-height: 40px;
-  margin: 5px;
+  margin:10px;
   padding: 0 9px;
+}
+
+.chatbar-message:focus,
+.chatbar-username:focus {
+  outline: 0;
 }
 
 .chatbar-message {
@@ -65,8 +73,8 @@ body {
 }
 
 .navbar {
-  background: tomato;
-  border-bottom: 1px solid black;
+  background: dodgerblue;
+  // border-bottom: 1px solid black;
   height: 60px;
   left: 0;
   padding: 0 10px;
@@ -76,7 +84,7 @@ body {
 }
 
 .navbar-brand {
-  color: inherit;
+  color: white;
   display: block;
   float: left;
   font-weight: 700;
@@ -85,4 +93,12 @@ body {
   line-height: 60px;
   padding: 0 10px;
   text-decoration: none;
+}
+
+
+.navbar h4 {
+  color: white;
+  float: right;
+  margin-top: 20px;
+  margin-right: 20px;
 }

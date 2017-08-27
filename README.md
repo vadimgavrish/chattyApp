@@ -1,4 +1,4 @@
-# Chatty `#1589F0`
+# Chatty
 
 ## Project Description
 Chatty will allow users to communicate with each other without having to register accounts. It uses React, as well as Node, Babel, Webpack, and WebSockets.
